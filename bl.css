@@ -1,0 +1,115 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    background: #1A3B29;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    text-align: center;
+    letter-spacing: 3px;
+    margin-top: 3vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.playerscore h2, .botscore h2 {
+    text-align: center;
+    font-family: 'Hammersmith One', sans-serif;
+    color: white;
+    font-size: 4em;
+}
+
+.playerscore p, .botscore p {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size: 2em;
+
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;;
+}
+
+.score h3 {
+    font-family: 'Hammersmith One', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.score p {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    text-align: center;
+}
+
+.game {
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.line {
+    border: 1px solid white;
+    background: white;
+    height: 50vh;
+    width: 1px;
+}
+
+.buts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buts button {
+    background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+border: none;
+width: 168px;
+height: 50px;
+font-family: 'Playfair Display', serif;
+    color: black;
+    letter-spacing: 1px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.you, .dealer {
+
+    height: 60vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.you img, .dealer img {
+    height: 126px;
+    width: 90px;
+    border: 1px solid black;
+}
+
+#hit, #stand {
+    margin-right: 20px;
+}
+
+.wins, .losses {
+    margin-right: 20px;
+}
+
