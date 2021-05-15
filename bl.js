@@ -1,3 +1,5 @@
+
+
 document.querySelector('#hit').addEventListener('click', bjhit);
 document.querySelector('#deal').addEventListener('click', deal);
 document.querySelector('#stand').addEventListener('click', stand);
@@ -37,10 +39,12 @@ function randCard() {
 }
 
 function showCard(num, player) {
-    let cardimg = document.createElement('img');
-    cardimg.src = "images/" + cards[num];
-    document.querySelector(bjgame[player]['div']).appendChild(cardimg);
-    hitsound.play();
+    if (bjgame[player]['score'] <= 21) {
+        let cardimg = document.createElement('img');
+        cardimg.src = "images/" + cards[num];
+        document.querySelector(bjgame[player]['div']).appendChild(cardimg);
+        hitsound.play();
+    }
 }
 
 function showScore(player) {
@@ -79,24 +83,26 @@ function showScore(player) {
 }
 
 function addscore(num, player) {
-    if (num === 0) {
-        if ((bjgame[player]['score'] + 11) <= 21) {
-            bjgame[player]['score'] += 11;
+    if (bjgame[player]['score'] <= 21) {
+        if (num === 0) {
+            if ((bjgame[player]['score'] + 11) <= 21) {
+                bjgame[player]['score'] += 11;
+                showScore(player);
+            }
+            else {
+                bjgame[player]['score'] += 1;
+                showScore(player);
+            }
+        }
+        else if (num <= 9) {
+            bjgame[player]['score'] += (num + 1);
             showScore(player);
         }
-        else {
-            bjgame[player]['score'] += 1;
-            showScore(player);
-        }
-    }
-    else if (num <= 9) {
-        bjgame[player]['score'] += (num + 1);
-        showScore(player);
-    }
 
-    else {
-        bjgame[player]['score'] += 10;
-        showScore(player);
+        else {
+            bjgame[player]['score'] += 10;
+            showScore(player);
+        }
     }
 }
 
